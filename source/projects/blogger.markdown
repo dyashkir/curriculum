@@ -1340,14 +1340,14 @@ In `app/models/article.rb`:
 
 ```ruby
 has_many :taggings
-has_many :tags, through: :taggings
+has_many :tags, :through => taggings
 ```
 
 In `app/models/tag.rb`:
 
 ```ruby
 has_many :taggings
-has_many :articles, through: :taggings
+has_many :articles, :through => taggings
 ```
 
 Now if we have an object like `article` we can just ask for `article.tags` or, conversely, if we have an object named `tag` we can ask for `tag.articles`.
